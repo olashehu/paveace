@@ -11,7 +11,7 @@ const stats = [
 
 const About = () => {
   return (
-    <section id="about" className="bg-secondary py-24">
+    <section id="about" className="bg-[#edf1f3] py-24">
       <div className="container mx-auto px-6">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <motion.div
@@ -20,19 +20,19 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-primary">
+            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#20b5c5]">
               About Us
             </span>
-            <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">
               Your Trusted Technology Partner
             </h2>
-            <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
+            <p className="mb-6 text-lg leading-relaxed text-[#8a9ea8]">
               Paveace Technologies Limited is a dynamic and innovative company
               dedicated to providing comprehensive technology solutions. Based
               in Bida, Niger State, we serve businesses and individuals with
               excellence and integrity.
             </p>
-            <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
+            <p className="mb-8 text-lg leading-relaxed text-[#8a9ea8]">
               From creative design and printing to IT infrastructure, solar
               energy solutions, and software development, we deliver quality
               services that exceed expectations.
@@ -46,8 +46,8 @@ const About = () => {
                 "Competitive pricing",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  <span className="text-foreground">{item}</span>
+                  <CheckCircle className="h-5 w-5 text-[#20b5c5]" />
+                  <span className="">{item}</span>
                 </li>
               ))}
             </ul>
@@ -72,12 +72,12 @@ const About = () => {
                   className="rounded-2xl bg-card p-6 text-center shadow-card"
                 >
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl gradient-primary">
-                    <Icon className="h-6 w-6 text-primary-foreground" />
+                    <Icon className="h-6 w-6 text-white" />
                   </div>
-                  <div className="text-3xl font-bold text-foreground">
+                  <div className="text-3xl font-bold">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-sm text-[#8a9ea8]">
                     {stat.label}
                   </div>
                 </motion.div>

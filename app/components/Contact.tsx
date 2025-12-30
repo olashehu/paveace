@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
@@ -58,7 +58,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-background py-24">
+    <section id="contact" className="bg-[#f9fafb] py-24">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,13 +67,13 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-primary">
+          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#20b5c5]">
             Get In Touch
           </span>
-          <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
             Contact Us
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-lg text-[#8a9ea8]">
             Ready to start your project? Get in touch with us today and
             let&apos;s bring your ideas to life.
           </p>
@@ -100,13 +100,11 @@ const Contact = () => {
                     className="rounded-2xl bg-card p-6 shadow-card"
                   >
                     <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl gradient-primary">
-                      <Icon className="h-6 w-6 text-primary-foreground" />
+                      <Icon className="h-6 w-6 text-white" />
                     </div>
-                    <h3 className="mb-2 font-bold text-foreground">
-                      {info.title}
-                    </h3>
+                    <h3 className="mb-2 font-bold">{info.title}</h3>
                     {info.details.map((detail) => (
-                      <p key={detail} className="text-sm text-muted-foreground">
+                      <p key={detail} className="text-sm text-[#8a9ea8]">
                         {detail}
                       </p>
                     ))}
@@ -131,7 +129,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="mb-2 block text-sm font-medium text-foreground"
+                    className="mb-2 block text-sm font-medium"
                   >
                     Your Name
                   </label>
@@ -225,8 +223,10 @@ const Contact = () => {
                   placeholder="Tell us about your project..."
                 />
               </div>
-              {/* size="lg" */}
-              <button type="submit" className="w-full">
+              <button
+                type="submit"
+                className="w-full h-12 px-8 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#20b5c5] text-white hover:bg-[#1aa1ad] focus:ring-[#1aa1ad]"
+              >
                 <Send className="mr-2 h-4 w-4" />
                 Send Message
               </button>

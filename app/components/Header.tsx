@@ -27,25 +27,25 @@ const Header = () => {
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-[color-mix(in_oklab,hsl(var(--background))_95%,transparent)] shadow-card backdrop-blur-md"
-          : "bg-[transparent] backdrop-blur-0 shadow-none"
+          : "bg-transparent backdrop-blur-0 shadow-none"
       }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-2 lg:px-4">
         <div className="flex h-20 items-center justify-between">
-          <Link href="#home" className="flex items-center gap-2">
+          <Link href="#home" className="flex items-center gap-2 text-nowrap">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg gradient-primary shadow-glow">
-              <span className="text-xl font-bold text-[#fff]">P</span>
+              <span className="text-xl font-bold text-white">P</span>
             </div>
             <div className="hidden sm:block">
               <span
                 className={`text-2xl font-bold transition-opacity ${
-                  isScrolled ? "text-[#0d1e26]" : "text-[#fff]"
+                  isScrolled ? "text-[#0d1e26]" : "text-white"
                 }`}
               >
                 Paveace
               </span>
               <span
-                className={`text-lg font-light ${
+                className={`text-lg font-light md:hidden lg:inline ${
                   isScrolled ? "text-muted-foreground" : "text-[white]/70"
                 }`}
               >
@@ -56,7 +56,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-3 lg:gap-8 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -74,7 +74,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div
-            className={`hidden items-center gap-4 md:flex ${
+            className={`hidden items-center gap-4 pl-2 md:flex ${
               isScrolled ? "text-foreground" : "text-white"
             }`}
           >
