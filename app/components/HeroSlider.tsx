@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -11,7 +12,6 @@ import {
   Sun,
   Code,
 } from "lucide-react";
-// import { Button } from "@/components/ui/button";
 
 import heroDesign from "../assets/hero-design.jpg";
 import heroIT from "../assets/hero-it.jpg";
@@ -143,12 +143,18 @@ const HeroSlider = () => {
                 transition={{ delay: 0.5 }}
                 className="flex flex-wrap gap-4"
               >
-                <button className="gradient-primary h-12 rounded-lg px-8 text-base text-white transition-colors">
+                <Link
+                  href="#contact"
+                  className="gradient-primary h-12 rounded-lg px-8 text-base text-white transition-colors flex items-center"
+                >
                   Contact Us
-                </button>
-                <button className="btn-secondary bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 h-12 rounded-lg px-8">
+                </Link>
+                <Link
+                  href="#contact"
+                  className="btn-secondary bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/40 h-12 rounded-lg px-8 flex items-center"
+                >
                   Learn More
-                </button>
+                </Link>
               </motion.div>
             </motion.div>
           </AnimatePresence>
@@ -158,7 +164,7 @@ const HeroSlider = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-3 backdrop-blur-sm transition-all hover:bg-white/20 md:left-8"
+        className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/10 p-3 backdrop-blur-sm transition-all hover:bg-white/20"
         aria-label="Previous slide"
       >
         <ChevronLeft className="h-6 w-6 text-white" />
