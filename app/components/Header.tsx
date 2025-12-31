@@ -22,6 +22,8 @@ const Header = () => {
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
+
+  const phoneNumber = '08102612957'
   return (
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
@@ -79,7 +81,9 @@ const Header = () => {
             }`}
           >
             <Link
-              href="tel:08102612957"
+              href={`tel:${phoneNumber}`}
+              title={`Call ${phoneNumber}`}
+              aria-label={`Call ${phoneNumber}`}
               className={`flex items-center gap-2 text-lg font-medium
                 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
             >
