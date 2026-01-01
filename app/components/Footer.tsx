@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -8,6 +9,7 @@ import {
   Instagram,
   Linkedin,
 } from "lucide-react";
+import paveace from "../assets/paveace.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,7 +46,12 @@ const Footer = () => {
           <div>
             <div className="mb-6 flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg gradient-primary shadow-glow">
-                <span className="text-xl font-bold text-white">P</span>
+                {/* <span className="text-xl font-bold text-white">P</span> */}
+                <Image
+                  src={paveace}
+                  alt="logo"
+                  className="mix-blend-screen rounded-lg"
+                />
               </div>
               <div>
                 <span className="text-lg font-bold text-white">Paveace</span>

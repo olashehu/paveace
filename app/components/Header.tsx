@@ -3,10 +3,14 @@
 import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import paveace from "../assets/paveace.jpg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const { push } = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +27,7 @@ const Header = () => {
     { href: "#contact", label: "Contact" },
   ];
 
-  const phoneNumber = '08102612957'
+  const phoneNumber = "08102612957";
   return (
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
@@ -36,7 +40,11 @@ const Header = () => {
         <div className="flex h-20 items-center justify-between">
           <Link href="#home" className="flex items-center gap-2 text-nowrap">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg gradient-primary shadow-glow">
-              <span className="text-xl font-bold text-white">P</span>
+              <Image
+                src={paveace}
+                alt="logo"
+                className="rounded-lg mix-blend-screen"
+              />
             </div>
             <div className="hidden sm:block">
               <span
@@ -132,13 +140,23 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                href="tel:08102612957"
+                href={`tel:${phoneNumber}`}
+                aria-label={`Call ${phoneNumber}`}
+                title={`Call ${phoneNumber}`}
                 className="flex items-center gap-2 text-sm font-medium text-foreground"
               >
                 <Phone className="h-4 w-4" />
                 <span>08102612957</span>
               </Link>
-              <button className="mt-2 w-full">Contact me</button>
+              <button
+                className="mt-2 w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 px-4 gradient-primary"
+                onClick={() => {
+                  push("#contact");
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Contact us
+              </button>
             </nav>
           </div>
         )}
