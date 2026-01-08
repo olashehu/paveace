@@ -4,13 +4,12 @@ import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import paveace from "../assets/paveace.jpg";
+import MobileMenus from "./MobileMenus";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const { push } = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +38,8 @@ const Header = () => {
       <div className="container mx-auto px-2 lg:px-4">
         <div className="flex h-20 items-center justify-between">
           <Link href="#home" className="flex items-center gap-2 text-nowrap">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg gradient-primary shadow-glow">
-              <Image
-                src={paveace}
-                alt="logo"
-                className="rounded-lg mix-blend-screen"
-              />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg">
+              <Image src={paveace} alt="logo" className="rounded-lg" />
             </div>
             <div className="hidden sm:block">
               <span
@@ -73,8 +68,8 @@ const Header = () => {
                 href={link.href}
                 className={`text-lg font-medium transition-colors ${
                   isScrolled
-                    ? "text-foreground hover:text-[#248F86]"
-                    : "text-white hover:text-[#248F86]/80"
+                    ? "text-foreground hover:text-[#7f51f2]"
+                    : "text-white hover:text-[#7f51f2]"
                 }`}
               >
                 {link.label}
@@ -98,9 +93,14 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span>08102612957</span>
             </Link>
-            <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 px-4 gradient-primary">
+            <Link
+              href="#contact"
+              className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 px-4 gradient-primary ${
+                isScrolled && "text-white/70"
+              }`}
+            >
               Contact us
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -127,38 +127,12 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="border-t border-border bg-white p-6 md:hidden">
-            <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-medium text-foreground transition-colors hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                href={`tel:${phoneNumber}`}
-                aria-label={`Call ${phoneNumber}`}
-                title={`Call ${phoneNumber}`}
-                className="flex items-center gap-2 text-sm font-medium text-foreground"
-              >
-                <Phone className="h-4 w-4" />
-                <span>08102612957</span>
-              </Link>
-              <button
-                className="mt-2 w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-lg font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9 px-4 gradient-primary"
-                onClick={() => {
-                  push("#contact");
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                Contact us
-              </button>
-            </nav>
-          </div>
+          <MobileMenus
+            navLinks={navLinks}
+            phoneNumber={phoneNumber}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
         )}
       </div>
     </header>

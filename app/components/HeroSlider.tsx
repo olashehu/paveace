@@ -114,7 +114,7 @@ const HeroSlider = () => {
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl gradient-primary shadow-glow">
                   <Icon className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-md font-medium uppercase tracking-widest text-[#1ae5e5]">
+                <span className="text-md font-medium uppercase tracking-widest text-white">
                   {currentSlideData.subtitle}
                 </span>
               </motion.div>

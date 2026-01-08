@@ -20,7 +20,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#20b5c5]">
+            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#7f51f2]">
               About Us
             </span>
             <h2 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">
@@ -46,7 +46,7 @@ const About = () => {
                 "Competitive pricing",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-[#20b5c5]" />
+                  <CheckCircle className="h-5 w-5 text-[#7f51f2]" />
                   <span className="">{item}</span>
                 </li>
               ))}
@@ -74,12 +74,8 @@ const About = () => {
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl gradient-primary">
                     <Icon className="h-6 w-6 text-white" />
                   </div>
-                  <div className="text-3xl font-bold">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-[#8a9ea8]">
-                    {stat.label}
-                  </div>
+                  <div className="text-3xl font-bold">{stat.value}</div>
+                  <div className="text-sm text-[#8a9ea8]">{stat.label}</div>
                 </motion.div>
               );
             })}

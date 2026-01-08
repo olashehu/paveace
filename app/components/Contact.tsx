@@ -67,7 +67,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#20b5c5]">
+          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#be52f8]">
             Get In Touch
           </span>
           <h2 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
@@ -225,7 +225,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full h-12 px-8 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#20b5c5] text-white hover:bg-[#1aa1ad] focus:ring-[#1aa1ad]"
+                className="w-full h-12 px-8 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-primary text-white hover:bg-gradient-primary focus:ring-[#1aa1ad]"
               >
                 <Send className="mr-2 h-4 w-4" />
                 Send Message

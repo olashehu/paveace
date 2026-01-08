@@ -66,7 +66,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#20b5c5]">
+          <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#7f51f2]">
             What We Offer
           </span>
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
@@ -113,7 +113,7 @@ const Services = () => {
 
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#20b5c5] transition-colors hover:text-primary/80"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#7f51f2] transition-colors hover:text-primary/80"
                 >
                   Learn More
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
