@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+// import { useState } from "react";
+// import toast, { Toaster } from "react-hot-toast";
+import ContactForm from "./ContactForm";
 
 const contactInfo = [
   {
@@ -33,29 +34,38 @@ const contactInfo = [
 ];
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   service: "",
+  //   message: "",
+  // });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const notify = () =>
-      toast.success("Message Sent! We'll get back to you as soon as possible.");
-    notify();
-    setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   try {
+  //     const notify = () =>
+  //       toast.success(
+  //         "Message Sent! We'll get back to you as soon as possible.",
+  //       );
+  //     notify();
+  //     setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error);
+  //     const notify = () =>
+  //       toast.error("Failed to send message. Please try again later.");
+  //     notify();
+  //   }
+  // };
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (
+  //   e: React.ChangeEvent<
+  //     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  //   >,
+  // ) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
   return (
     <section id="contact" className="bg-[#f9fafb] py-24">
@@ -121,7 +131,8 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form
+            <ContactForm />
+            {/* <form
               onSubmit={handleSubmit}
               className="rounded-2xl bg-card p-8 shadow-card"
             >
@@ -230,11 +241,11 @@ const Contact = () => {
                 <Send className="mr-2 h-4 w-4" />
                 Send Message
               </button>
-            </form>
+            </form> */}
           </motion.div>
         </div>
       </div>
-      <Toaster />
+      {/* <Toaster /> */}
     </section>
   );
 };
