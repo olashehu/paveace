@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-// import { useState } from "react";
-// import toast, { Toaster } from "react-hot-toast";
 import ContactForm from "./ContactForm";
 
 const contactInfo = [
@@ -34,39 +32,6 @@ const contactInfo = [
 ];
 
 const Contact = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   service: "",
-  //   message: "",
-  // });
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   try {
-  //     const notify = () =>
-  //       toast.success(
-  //         "Message Sent! We'll get back to you as soon as possible.",
-  //       );
-  //     notify();
-  //     setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-  //   } catch (error) {
-  //     console.error("Error submitting form:", error);
-  //     const notify = () =>
-  //       toast.error("Failed to send message. Please try again later.");
-  //     notify();
-  //   }
-  // };
-
-  // const handleChange = (
-  //   e: React.ChangeEvent<
-  //     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-  //   >,
-  // ) => {
-  //   setFormData({ ...formData, [e.target.name]: e.target.value });
-  // };
-
   return (
     <section id="contact" className="bg-[#f9fafb] py-24">
       <div className="container mx-auto px-6">
@@ -132,120 +97,9 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <ContactForm />
-            {/* <form
-              onSubmit={handleSubmit}
-              className="rounded-2xl bg-card p-8 shadow-card"
-            >
-              <div className="mb-6 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="mb-2 block text-sm font-medium"
-                  >
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-sm font-medium text-foreground"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-
-              <div className="mb-6 grid gap-6 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="mb-2 block text-sm font-medium text-foreground"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                    placeholder="08012345678"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="service"
-                    className="mb-2 block text-sm font-medium text-foreground"
-                  >
-                    Service Interested In
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="design">Design, Brand & Printing</option>
-                    <option value="it">IT, CCTV & Networking</option>
-                    <option value="solar">Solar & Electrical Energy</option>
-                    <option value="software">Software & Websites</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm font-medium text-foreground"
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  required
-                  className="w-full resize-none rounded-lg border border-input bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full h-12 px-8 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 gradient-primary text-white hover:bg-gradient-primary focus:ring-[#1aa1ad]"
-              >
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
-              </button>
-            </form> */}
           </motion.div>
         </div>
       </div>
-      {/* <Toaster /> */}
     </section>
   );
 };
